@@ -129,6 +129,19 @@
 	function goToTime(time){
 		player.seekTo(time);
 	}
+window.addEventListener('keydown',this.check,false);
+	function check(e) {
+		var code = e.keyCode;
+		//Left arrow pressed
+		if (code == 37)
+			player.seekTo(player.getCurrentTime()-(1/30));
+		//Right arrow pressed
+		if (code == 39)
+			player.seekTo(player.getCurrentTime()+(1/30));
+		//Spacebar pressed
+		if (code == 32)
+			player.pauseVideo();
+	}
 </script>
 </body>
 	
